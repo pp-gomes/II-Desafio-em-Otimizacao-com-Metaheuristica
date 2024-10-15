@@ -65,5 +65,5 @@ Os resultados mostram que o método híbrido GRASP-VNS supera tanto o GRASP puro
 O GRASP-VNS apresentou um desempenho ligeiramente superior em termos de otimização, principalmente para instâncias maiores (C7), com um tempo de execução significativamente reduzido em comparação ao Simulated Annealing (SA). Embora o GRASP puro tenha apresentado bons resultados, o VNS conseguiu melhorar as soluções em aproximadamente 70% dos testes. Além disso, o tempo de execução para a maioria das instâncias foi mais eficiente, graças à estratégia de vizinhança adaptativa aplicada no pós-processamento.
 
 ## 4. Referências
-[1] Beltrán, J. D., Calderón, J. E., Cabrera, R. J., Pérez, J. A. M., & Moreno-Vega, J. M. (2004). GRASP-VNS hybrid for the Strip Packing Problem. In Proceedings of the 4th Metaheuristics International Conference (pp. 417-421).
-[11] Hopper, E., & Turton, B. C. H. (2001). An empirical investigation of meta-heuristics and heuristics algorithms for a 2D packing problem. European Journal of Operational Research, 128(1), 34-57.
+- [1] Beltrán, J. D., Calderón, J. E., Cabrera, R. J., Pérez, J. A. M., & Moreno-Vega, J. M. (2004). GRASP-VNS hybrid for the Strip Packing Problem. In Proceedings of the 4th Metaheuristics International Conference (pp. 417-421).
+- [11] Hopper, E., & Turton, B. C. H. (2001). An empirical investigation of meta-heuristics and heuristics algorithms for a 2D packing problem. European Journal of Operational Research, 128(1), 34-57.
