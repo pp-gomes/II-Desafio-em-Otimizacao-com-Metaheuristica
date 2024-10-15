@@ -9,15 +9,13 @@
 
 **Software:**
 - Sistema Operacional: Ubuntu 20.04 LTS.
-- Linguagem de Programação: Python 3.8.
+- Linguagem de Programação: C++.
 - Bibliotecas Utilizadas:
-  - `numpy` para operações matemáticas.
-  - `matplotlib` para visualização gráfica dos resultados.
-  - `PyMetaheuristics` para implementação da metaheurística.
+  - `bits/stdc++.h` para o uso de estruturas de dados ,rand e srand.
 
 ## 2. Instâncias Utilizadas
 
-As instâncias empregadas nos experimentos são as fornecidas pela comissão organizadora, correspondendo a problemas de empacotamento de itens em duas dimensões. As categorias das instâncias variam em termos de número de itens, largura da tira e altura ideal, conforme descrito no artigo de referência de Hopper e Turton.
+As instâncias empregadas nos experimentos são as fornecidas pela comissão organizadora, correspondendo a problemas de empacotamento de itens em uma dimensão. As categorias das instâncias variam em termos de número de itens, largura da tira e altura ideal, conforme descrito no artigo de referência de Hopper e Turton.
 
 ## 3. Descrição Detalhada da Metaheurística e Variações
 
@@ -30,15 +28,16 @@ Utilizamos uma abordagem híbrida que combina o **GRASP** (Greedy Randomized Ada
 O algoritmo foi implementado seguindo as diretrizes do artigo "GRASP-VNS hybrid for the Strip Packing Problem". Na fase de construção, a lista de candidatos restritos é gerada para permitir a escolha aleatória de elementos promissores. A fase de busca local utiliza o VNS para refinar as soluções.
 
 **Adaptações:**
-- O algoritmo foi ajustado para aceitar a rotação de 90° dos retângulos.
+- O algoritmo foi ajustado para obter a junção da meta-heuristica Grasp com a VNS.
+- Implementamos a aleatoriedade com base em seed de tempo.
 - Implementamos uma função de ajuste de contorno para melhorar a eficiência no empacotamento.
 
 ### 3.3 Variações Testadas
 
 Foram testadas diferentes variações do valor do parâmetro **α** que controla a seleção de elementos na lista de candidatos restritos (RCL) do GRASP:
-- **α = 0**: Melhor ajuste estrito.
-- **α = 0.1**: Ajuste com uma tolerância maior.
-- **α = 0.2**: Seleção mais relaxada de candidatos.
+- **α = 0**: Melhor restrição.
+- **α = 1**: Ajuste com uma abordagem gulosa.
+- **α = 0.6**: Seleção mais relaxada de candidatos em relação a gulosa.
 
 ### 3.4 Justificativa para as Escolhas
 
@@ -46,9 +45,9 @@ Escolhemos o híbrido GRASP-VNS devido ao seu desempenho robusto em problemas de
 
 ### 3.5 Parâmetros Utilizados
 
-- **Número de iterações (niter):** 40 iterações para garantir a convergência.
+- **Número de iterações (niter):** 10000 iterações para garantir a convergência.
 - **Tamanho da lista de candidatos restritos (RCL):** Baseada em uma fração **α** dos melhores candidatos.
-- **Tamanho da vizinhança (VNS):** Vizinhanças variando de **k = 1** a **k = 3**, aumentando progressivamente com a dificuldade do problema.
+- **Tamanho da vizinhança (VNS):** Vizinhanças variando de **k = 1** a **k = 10000**, aumentando progressivamente com a dificuldade do problema.
 
 ### 3.6 Resultados
 
