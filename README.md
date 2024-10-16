@@ -15,13 +15,13 @@
 
 ## 2. Instâncias Utilizadas
 
-As instâncias empregadas nos experimentos são as fornecidas pela comissão organizadora, correspondendo ao Problema de Empacotamento Unidimensional (_bin packing). As instâncias estão disponíveis no seguinte link:(https://drive.google.com/drive/folders/1Nyv_E_bHiubAvDVJXY5vvWFIbvHTzAU4?usp=sharing)
+As instâncias empregadas nos experimentos são as fornecidas pela comissão organizadora, correspondendo ao Problema de Empacotamento Unidimensional (_Bin Packing_). As instâncias estão disponíveis no seguinte link:(https://drive.google.com/drive/folders/1Nyv_E_bHiubAvDVJXY5vvWFIbvHTzAU4?usp=sharing)
 
 ## 3. Descrição Detalhada da Metaheurística e Variações
 
 ### 3.1 Fundamentação Teórica
 
-Utilizamos uma abordagem híbrida que combina o **GRASP** (_Greedy Randomized Adaptive Search Procedure) com a **VNS** (_Variable Neighbourhood Search) para resolver o Problema de Empacotamento Unidimensional (_bin packing). O GRASP é responsável por gerar uma solução inicial, enquanto o VNS refina as últimas partes da solução para reduzir o desperdício de espaço, minimizando a altura da empacotagem.
+Utilizamos uma abordagem híbrida que combina o **GRASP** (_Greedy Randomized Adaptive Search Procedure_) com a **VNS** (_Variable Neighbourhood Search_) para resolver o Problema de Empacotamento Unidimensional (_Bin Packing_). O GRASP é responsável por gerar uma solução inicial, enquanto o VNS refina as últimas partes da solução para reduzir o desperdício de espaço, minimizando a altura da empacotagem.
 
 ### 3.2 Implementação e Adaptações
 
@@ -81,4 +81,4 @@ Os resultados mostram que o método híbrido GRASP-VNS supera tanto o GRASP puro
 O GRASP-VNS apresentou um desempenho ligeiramente superior em termos de otimização, principalmente para instâncias maiores (C7), com um tempo de execução significativamente reduzido em comparação ao Simulated Annealing (SA). Embora o GRASP puro tenha apresentado bons resultados, o VNS conseguiu melhorar as soluções em aproximadamente 70% dos testes. Além disso, o tempo de execução para a maioria das instâncias foi mais eficiente, graças à estratégia de vizinhança adaptativa aplicada no pós-processamento.
 
 ## 4. Referências
-- [1] Beltrán, J. D., Calderón, J. E., Cabrera, R. J., Pérez, J. A. M., & Moreno-Vega, J. M. (2004). GRASP-VNS hybrid for the Strip Packing Problem. In Proceedings of the 4th Metaheuristics International Conference (pp. 417-421).
+- [1] Beltrán, J. D., Calderón, J. E., Cabrera, R. J., Pérez, J. A. M., & Moreno-Vega, J. M. (2004). **GRASP-VNS hybrid for the Strip Packing Problem**. In Proceedings of the 4th Metaheuristics International Conference (pp. 417-421).
