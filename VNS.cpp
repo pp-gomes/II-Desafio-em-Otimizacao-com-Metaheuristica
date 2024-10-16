@@ -2,10 +2,10 @@
 
 using namespace std;
 
-// Função auxiliar para ordenar os pares com base no primeiro valor (tamanho dos elementos)
-// em ordem decrescente. Utilizada na ordenação da lista de candidatos restritos (RCL).
-int ret(pair<int,int> a, pair<int,int> b) {
-    return a.first > b.first;
+// Função auxiliar para ordenar em ordem decrescente. Utilizada na ordenação da lista F (inicial).
+
+int ret(int a, int b) {
+    return a > b;
 }
 
 int main(){
@@ -18,14 +18,14 @@ int main(){
     cin >> n >> c;
 
     // Array para armazenar os tamanhos dos itens.
-    int f[n];
+    vector<int>f(n);
     // Leitura dos tamanhos dos itens.
     for(int i = 0; i < n; i++){
         cin >> f[i];
     }
 
-    // Ordenar a RCL em ordem decrescente pelo tamanho dos itens.
-    sort(rcl.begin(), rcl.end(), ret);
+    // Ordenar o vector f em ordem decrescente pelo tamanho dos itens.
+    sort(f.begin(), f.end(), ret);
 
     int k = 0;  // Variável de controle do laço de VNS .
     int r = n;  // Número inicial de caixas, começa assumindo que cada item terá sua própria caixa.
