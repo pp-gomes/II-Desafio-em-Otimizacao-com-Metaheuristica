@@ -18,7 +18,7 @@ int main(){
         cin >> f[i];
     }
 
-    int k = 0;  // Variável de controle do laço de VNS (indica o número de iterações consecutivas sem melhoria).
+    int k = 0;  // Variável de controle do laço de VNS .
     int r = n;  // Número inicial de caixas, começa assumindo que cada item terá sua própria caixa.
 
     // Loop principal da metaheurística VNS, executado até que o critério de parada seja atingido.
