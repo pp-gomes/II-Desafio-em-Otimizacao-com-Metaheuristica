@@ -1,5 +1,6 @@
 # Desafio de Otimização com Metaheurísticas
-
+**Nome da equipe:** The Otimization Hunter:  Metaheuristics
+**Equipe:** Enzo Moura de Rezende e Pedro Paulo Gomes do Carmo
 ## 1. Introdução
 
 O problema de Empacotamento Unidimensional (Bin Packing) é um clássico problema de otimização combinatória NP-difícil, com diversas aplicações práticas, como alocação de recursos e logística. O objetivo é minimizar o número de "caixas" (bins) necessárias para armazenar um conjunto de "itens" (itens) de diferentes tamanhos, considerando a capacidade limitada de cada caixa.
