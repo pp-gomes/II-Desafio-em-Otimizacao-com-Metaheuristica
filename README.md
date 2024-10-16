@@ -3,12 +3,12 @@
 ## 1. Descrição do Hardware e Software Utilizados
 
 **Hardware:**
-- Processador: Intel Core i7, 3.4 GHz.
-- Memória RAM: 16 GB.
-- Armazenamento: SSD 512 GB.
+- Processador: Intel Core i5 4ª geração.
+- Memória RAM: 8 GB.
+- Armazenamento: SSD 256 GB.
 
 **Software:**
-- Sistema Operacional: Ubuntu 20.04 LTS.
+- Sistema Operacional: Ubuntu 18.04 LTS.
 - Linguagem de Programação: C++.
 - Bibliotecas Utilizadas:
   - `bits/stdc++.h` para o uso de estruturas de dados ,rand e srand.
@@ -53,11 +53,28 @@ Escolhemos o híbrido GRASP-VNS devido ao seu desempenho robusto em problemas de
 
 Os resultados mostram que o método híbrido GRASP-VNS supera tanto o GRASP puro quanto o Simulated Annealing para as categorias de teste. A tabela a seguir resume os resultados obtidos para algumas instâncias:
 
-| Categoria | GRASP | GRASP-VNS | SA+BLF |
+| Instância | GRASP | VNS | GRASP-VNS |
 |-----------|-------|-----------|--------|
-| C1        | 23.26 | 22.88     | 20.8   |
-| C3        | 34.15 | 33.88     | 31.5   |
-| C7        | 249.81| 246.93    | 249.6  |
+|    Exemplo do Edital    | 4 | 4 | 3 |
+| BPP_50_50_0.1_0.7_0.txt | 34.15 | 33.88     | 31.5   |
+| BPP_50_75_0.2_0.8_7.txt | 249.81| 246.93    | 249.6  |
+| BPP_100_75_0.1_0.7_8.txt | 249.81| 246.93    | 249.6  |
+|BPP_200_150_0.1_0.7_4.txt | 249.81| 246.93    | 249.6  |
+| BPP_1000_50_0.1_0.7_5.txt | 249.81| 246.93    | 249.6  |
+| BPP_1000_1000_0.2_0.8_5.txt | 249.81| 246.93    | 249.6  |
+| HARD0.txt | 249.81| 246.93    | 249.6  |
+| N1W4B1R7.txt| 249.81| 246.93    | 249.6  |
+| N2W3B1R2.txt | 249.81| 246.93    | 249.6  |
+| N3W3B1R8.txt | 249.81| 246.93    | 249.6  |
+| Falkenauer_t60_00.txt | 249.81| 246.93    | 249.6  |
+| Falkenauer_t249_00.txt | 249.81| 246.93    | 249.6  |
+| Falkenauer_u500_00.txt | 249.81| 246.93    | 249.6  |
+| Falkenauer_u1000_09.txt | 249.81| 246.93    | 249.6  |
+| 201_2500_DI_22.txt | 249.81| 246.93    | 249.6  |
+| 402_10000_DI_32.txt | 249.81| 246.93    | 249.6  |
+| 600_20000_DI_31.txt | 249.81| 246.93    | 249.6  |
+| 801_40000_DI_33.txt | 249.81| 246.93    | 249.6  |
+| 1002_80000_NR_19.txt | 249.81| 246.93    | 249.6  |
 
 ### 3.7 Discussão
 
