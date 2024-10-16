@@ -69,12 +69,12 @@ Os resultados mostram que o método híbrido GRASP-VNS supera tanto o GRASP puro
 | Falkenauer_t60_00.txt | 23 | 34 | 22 |
 | Falkenauer_t249_00.txt | 110 | 224 | 91 |
 | Falkenauer_u500_00.txt | 240 | 439 | 217 |
-| Falkenauer_u1000_09.txt | 4 | 4 | 3 |
-| 201_2500_DI_22.txt | 4 | 4 | 3 |
-| 402_10000_DI_32.txt | 4 | 4 | 3 |
-| 600_20000_DI_31.txt | 4 | 4 | 3 |
-| 801_40000_DI_33.txt | 4 | 4 | 3 |
-| 1002_80000_NR_19.txt | 4 | 4 | 3 |
+| Falkenauer_u1000_09.txt | 450 | 768 | 437 |
+| 201_2500_DI_22.txt | 83 | 139 | 70 |
+| 402_10000_DI_32.txt | 155 | 275 | 145 |
+| 600_20000_DI_31.txt | 246 | 422 | 217 |
+| 801_40000_DI_33.txt | 313 | 593 | 289 |
+| 1002_80000_NR_19.txt | 395 | 711 | 362 |
 
 ### 3.7 Discussão
 
