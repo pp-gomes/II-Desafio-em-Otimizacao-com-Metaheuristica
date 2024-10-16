@@ -3,7 +3,6 @@
 using namespace std;
 
 // Função auxiliar para ordenar em ordem decrescente. Utilizada na ordenação da lista F (inicial).
-
 int ret(int a, int b) {
     return a > b;
 }
