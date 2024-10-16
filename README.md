@@ -45,9 +45,9 @@ Escolhemos o híbrido GRASP-VNS devido ao seu desempenho robusto em problemas de
 
 ### 3.5 Parâmetros Utilizados
 
-- **Número de iterações (niter):** 10000 iterações para garantir a convergência.
+- **Número de iterações (niter):** 1000 iterações para garantir a convergência.
 - **Tamanho da lista de candidatos restritos (RCL):** Baseada em uma fração **α** dos melhores candidatos.
-- **Tamanho da vizinhança (VNS):** Vizinhanças variando de **k = 1** a **k = 10000**, aumentando progressivamente com a dificuldade do problema.
+- **Tamanho da vizinhança (VNS):** Vizinhanças variando de **k = 1** a **k = 1000**, aumentando progressivamente com a dificuldade do problema.
 
 ### 3.6 Resultados
 
