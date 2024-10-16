@@ -2,6 +2,12 @@
 
 using namespace std;
 
+// Função auxiliar para ordenar os pares com base no primeiro valor (tamanho dos elementos)
+// em ordem decrescente. Utilizada na ordenação da lista de candidatos restritos (RCL).
+int ret(pair<int,int> a, pair<int,int> b) {
+    return a.first > b.first;
+}
+
 int main(){
     // Desativando a sincronização padrão para melhorar a performance de entrada e saída.
     ios_base::sync_with_stdio(false);
@@ -18,6 +24,9 @@ int main(){
         cin >> f[i];
     }
 
+    // Ordenar a RCL em ordem decrescente pelo tamanho dos itens.
+    sort(rcl.begin(), rcl.end(), ret);
+
     int k = 0;  // Variável de controle do laço de VNS .
     int r = n;  // Número inicial de caixas, começa assumindo que cada item terá sua própria caixa.
 
@@ -28,7 +37,7 @@ int main(){
         // Estrutura de busca em diferentes vizinhanças, controlada pela variável `k`.
         for(int i = 0; i < k; i++) {
             srand(time(0)); // Geração de uma nova semente para o gerador de números aleatórios.
-            
+
             // Seleção aleatória de um item para tentar combinar com outro.
             // O item escolhido será da faixa de índices entre 0 e `r-2`, onde `r` é o número atual de caixas.
             int t = rand() % (r - 2);
