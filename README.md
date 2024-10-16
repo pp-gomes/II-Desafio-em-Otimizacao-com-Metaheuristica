@@ -15,20 +15,20 @@
 
 ## 2. Instâncias Utilizadas
 
-As instâncias empregadas nos experimentos são as fornecidas pela comissão organizadora, correspondendo a problemas de empacotamento de itens em uma dimensão. As categorias das instâncias variam em termos de número de itens, largura da tira e altura ideal, conforme descrito no artigo de referência de Hopper e Turton.
+As instâncias empregadas nos experimentos são as fornecidas pela comissão organizadora, correspondendo ao Problema de Empacotamento Unidimensional (_bin packing). As instâncias estão disponíveis no seguinte link:(https://drive.google.com/drive/folders/1Nyv_E_bHiubAvDVJXY5vvWFIbvHTzAU4?usp=sharing)
 
 ## 3. Descrição Detalhada da Metaheurística e Variações
 
 ### 3.1 Fundamentação Teórica
 
-Utilizamos uma abordagem híbrida que combina o **GRASP** (Greedy Randomized Adaptive Search Procedure) com a **VNS** (Variable Neighbourhood Search) para resolver o problema de empacotamento em tiras (*Strip Packing Problem*). O GRASP é responsável por gerar uma solução inicial, enquanto o VNS refina as últimas partes da solução para reduzir o desperdício de espaço, minimizando a altura da empacotagem.
+Utilizamos uma abordagem híbrida que combina o **GRASP** (_Greedy Randomized Adaptive Search Procedure) com a **VNS** (_Variable Neighbourhood Search) para resolver o Problema de Empacotamento Unidimensional (_bin packing). O GRASP é responsável por gerar uma solução inicial, enquanto o VNS refina as últimas partes da solução para reduzir o desperdício de espaço, minimizando a altura da empacotagem.
 
 ### 3.2 Implementação e Adaptações
 
-O algoritmo foi implementado seguindo as diretrizes do artigo "GRASP-VNS hybrid for the Strip Packing Problem". Na fase de construção, a lista de candidatos restritos é gerada para permitir a escolha aleatória de elementos promissores. A fase de busca local utiliza o VNS para refinar as soluções.
+O algoritmo foi implementado seguindo as diretrizes do artigo "GRASP-VNS hybrid for the Strip Packing Problem"[1]. Na fase de construção, a lista de candidatos restritos é gerada para permitir a escolha aleatória de elementos promissores. A fase de busca local utiliza o VNS para refinar as soluções.
 
 **Adaptações:**
-- O algoritmo foi ajustado para obter a junção da meta-heuristica Grasp com a VNS.
+- O algoritmo foi ajustado para obter a junção da Meta-Heuristica Grasp com a VNS.
 - Implementamos a aleatoriedade com base em seed de tempo.
 - Implementamos uma função de ajuste de contorno para melhorar a eficiência no empacotamento.
 
@@ -51,7 +51,7 @@ Escolhemos o híbrido GRASP-VNS devido ao seu desempenho robusto em problemas de
 
 ### 3.6 Resultados
 
-Os resultados mostram que o método híbrido GRASP-VNS supera tanto o GRASP puro quanto o Simulated Annealing para as categorias de teste. A tabela a seguir resume os resultados obtidos para algumas instâncias:
+Os resultados mostram que o método híbrido GRASP-VNS supera tanto o GRASP puro quanto o VNS para as categorias de teste. A tabela a seguir resume os resultados obtidos para algumas das instâncias disponibilizadas pela organização do desafio:
 
 | Instância | GRASP | VNS | GRASP-VNS |
 |-----------|-------|-----------|--------|
@@ -82,4 +82,3 @@ O GRASP-VNS apresentou um desempenho ligeiramente superior em termos de otimiza�
 
 ## 4. Referências
 - [1] Beltrán, J. D., Calderón, J. E., Cabrera, R. J., Pérez, J. A. M., & Moreno-Vega, J. M. (2004). GRASP-VNS hybrid for the Strip Packing Problem. In Proceedings of the 4th Metaheuristics International Conference (pp. 417-421).
-- [11] Hopper, E., & Turton, B. C. H. (2001). An empirical investigation of meta-heuristics and heuristics algorithms for a 2D packing problem. European Journal of Operational Research, 128(1), 34-57.
