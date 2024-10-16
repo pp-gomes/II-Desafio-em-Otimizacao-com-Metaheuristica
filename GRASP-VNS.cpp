@@ -89,7 +89,7 @@ int main() {
 
         // Fase VNS: melhoria da solução encontrada.
         int k = 0;
-        while (k < 100) {  // Executa VNS até atingir o limite de iterações sem melhoria.
+        while (k < 100) {  // Executa VNS até atingir o limite de iterações.
             int sum_f = best_solution_sum;  // Melhor soma de itens empacotados.
             vector<bool> esc = escc;  // Vetor auxiliar para itens escolhidos.
             vector<pair<int,int>> bs = best_solution;  // Solução auxiliar.
