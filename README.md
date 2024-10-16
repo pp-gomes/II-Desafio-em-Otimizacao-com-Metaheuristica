@@ -23,13 +23,13 @@ As instâncias empregadas nos experimentos são as fornecidas pela comissão org
 
 ## 4. Descrição Detalhada da Metaheurística
 
-###4.1. GRASP (Greedy Randomized Adaptive Search Procedure)
+### 4.1. GRASP (Greedy Randomized Adaptive Search Procedure)
 O GRASP constrói soluções iterativamente, escolhendo elementos de uma Lista de Candidatos Restritos (RCL) que contém os elementos mais promissores em cada passo. A aleatoriedade na escolha dentro da RCL permite explorar o espaço de busca e escapar de ótimos locais.
 
-###4.2. VNS (Variable Neighborhood Search)
+### 4.2. VNS (Variable Neighborhood Search)
 O VNS explora o espaço de busca de forma sistemática, alternando entre diferentes estruturas de vizinhança. Essa estratégia permite escapar de ótimos locais e refinar a solução obtida pelo GRASP.
 
-###4.3. Híbrido GRASP-VNS
+### 4.3. Híbrido GRASP-VNS
 Na implementação híbrida, o GRASP gera uma solução inicial de boa qualidade, que é então refinada pelo VNS. A combinação dessas duas técnicas busca explorar a capacidade de gerar soluções iniciais diversificadas do GRASP e a capacidade de exploração local do VNS.
 
 ### 4.4 Fundamentação Teórica
