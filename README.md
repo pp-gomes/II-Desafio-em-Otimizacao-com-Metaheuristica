@@ -1,6 +1,10 @@
 # Desafio de Otimização com Metaheurísticas
 
-## 1. Descrição do Hardware e Software Utilizados
+## 1. Introdução
+
+O problema de Empacotamento Unidimensional (Bin Packing) é um clássico problema de otimização combinatória NP-difícil, com diversas aplicações práticas, como alocação de recursos e logística. O objetivo é minimizar o número de "caixas" (bins) necessárias para armazenar um conjunto de "itens" (itens) de diferentes tamanhos, considerando a capacidade limitada de cada caixa.
+
+## 2. Descrição do Hardware e Software Utilizados
 
 **Hardware:**
 - Processador: Intel Core i5 4ª geração.
@@ -13,17 +17,26 @@
 - Bibliotecas Utilizadas:
   - `bits/stdc++.h` para o uso de estruturas de dados ,rand e srand.
 
-## 2. Instâncias Utilizadas
+## 3. Instâncias Utilizadas
 
 As instâncias empregadas nos experimentos são as fornecidas pela comissão organizadora, correspondendo ao Problema de Empacotamento Unidimensional (_Bin Packing_). As instâncias estão disponíveis no seguinte link:(https://drive.google.com/drive/folders/1Nyv_E_bHiubAvDVJXY5vvWFIbvHTzAU4?usp=sharing)
 
-## 3. Descrição Detalhada da Metaheurística e Variações
+## 4. Descrição Detalhada da Metaheurística
 
-### 3.1 Fundamentação Teórica
+###4.1. GRASP (Greedy Randomized Adaptive Search Procedure)
+O GRASP constrói soluções iterativamente, escolhendo elementos de uma Lista de Candidatos Restritos (RCL) que contém os elementos mais promissores em cada passo. A aleatoriedade na escolha dentro da RCL permite explorar o espaço de busca e escapar de ótimos locais.
+
+###4.2. VNS (Variable Neighborhood Search)
+O VNS explora o espaço de busca de forma sistemática, alternando entre diferentes estruturas de vizinhança. Essa estratégia permite escapar de ótimos locais e refinar a solução obtida pelo GRASP.
+
+###4.3. Híbrido GRASP-VNS
+Na implementação híbrida, o GRASP gera uma solução inicial de boa qualidade, que é então refinada pelo VNS. A combinação dessas duas técnicas busca explorar a capacidade de gerar soluções iniciais diversificadas do GRASP e a capacidade de exploração local do VNS.
+
+### 4.4 Fundamentação Teórica
 
 Utilizamos uma abordagem híbrida que combina o **GRASP** (_Greedy Randomized Adaptive Search Procedure_) com a **VNS** (_Variable Neighbourhood Search_) para resolver o Problema de Empacotamento Unidimensional (_Bin Packing_). O GRASP é responsável por gerar uma solução inicial, enquanto o VNS refina as últimas partes da solução para reduzir o desperdício de espaço, minimizando a altura da empacotagem.
 
-### 3.2 Implementação e Adaptações
+### 4.5 Implementação e Adaptações
 
 O algoritmo foi implementado seguindo as diretrizes do artigo "GRASP-VNS hybrid for the Strip Packing Problem"[1]. Na fase de construção, a lista de candidatos restritos é gerada para permitir a escolha aleatória de elementos promissores. A fase de busca local utiliza o VNS para refinar as soluções.
 
@@ -32,26 +45,26 @@ O algoritmo foi implementado seguindo as diretrizes do artigo "GRASP-VNS hybrid 
 - Implementamos a aleatoriedade com base em seed de tempo.
 - Implementamos uma função de ajuste de contorno para melhorar a eficiência no empacotamento.
 
-### 3.3 Variações Testadas
+### 4.6 Variações Testadas
 
 Foram testadas diferentes variações do valor do parâmetro **α** que controla a seleção de elementos na lista de candidatos restritos (RCL) do GRASP:
 - **α = 0**: Melhor restrição.
 - **α = 1**: Ajuste com uma abordagem gulosa.
 - **α = 0.6**: Seleção mais relaxada de candidatos em relação a gulosa.
 
-### 3.4 Justificativa para as Escolhas
+### 4.7 Justificativa para as Escolhas
 
-Escolhemos o híbrido GRASP-VNS devido ao seu desempenho robusto em problemas de otimização combinatória como o empacotamento de itens. A integração do VNS no pós-processamento do GRASP foi essencial para lidar com grandes instâncias e reduzir o espaço desperdiçado.
+A escolha pelo híbrido GRASP-VNS se baseia em sua robustez e bom desempenho em problemas de otimização combinatória. A combinação do GRASP para gerar soluções iniciais diversificadas com a capacidade de busca local do VNS busca um equilíbrio entre exploração e intensificação.
 
-### 3.5 Parâmetros Utilizados
+### 4.8 Parâmetros Utilizados
 
 - **Número de iterações (niter):** 100 iterações para garantir a convergência.
 - **Tamanho da lista de candidatos restritos (RCL):** Baseada em uma fração **α** dos melhores candidatos.
 - **Tamanho da vizinhança (VNS):** Vizinhanças variando de **k = 1** a **k = 100**, aumentando progressivamente com a dificuldade do problema.
 
-### 3.6 Resultados
+## 5. Resultados
 
-Os resultados mostram que o método híbrido GRASP-VNS supera tanto o GRASP puro quanto o VNS para as categorias de teste. A tabela a seguir resume os resultados obtidos para algumas das instâncias disponibilizadas pela organização do desafio:
+Os resultados obtidos pelo GRASP-VNS, GRASP puro e VNS puro são apresentados na tabela abaixo. O desempenho do GRASP-VNS foi superior em relação aos outros dois algoritmos em termos de otimização, principalmente para instâncias maiores. 
 
 | Instância | GRASP | VNS | GRASP-VNS |
 |-----------|-------|-----------|--------|
@@ -76,9 +89,12 @@ Os resultados mostram que o método híbrido GRASP-VNS supera tanto o GRASP puro
 | 801_40000_DI_33.txt | 313 | 593 | 289 |
 | 1002_80000_NR_19.txt | 395 | 711 | 362 |
 
-### 3.7 Discussão
+## 6. Discussão
 
-O GRASP-VNS apresentou um desempenho ligeiramente superior em termos de otimização, principalmente para instâncias maiores (C7), com um tempo de execução significativamente reduzido em comparação ao Simulated Annealing (SA). Embora o GRASP puro tenha apresentado bons resultados, o VNS conseguiu melhorar as soluções em aproximadamente 70% dos testes. Além disso, o tempo de execução para a maioria das instâncias foi mais eficiente, graças à estratégia de vizinhança adaptativa aplicada no pós-processamento.
+O GRASP-VNS apresentou um desempenho ligeiramente superior em termos de otimização para o problema de Bin Packing, superando tanto o GRASP puro quanto o VNS puro na maioria das instâncias testadas. A sinergia entre a capacidade de gerar soluções iniciais diversificadas do GRASP e a busca local eficiente do VNS contribuiu para o bom desempenho do algoritmo híbrido.
 
-## 4. Referências
+## 7. Conclusões
+A utilização do algoritmo híbrido GRASP-VNS se mostrou uma estratégia eficaz para a resolução do problema de Bin Packing. Os resultados obtidos demonstram o potencial da técnica para encontrar soluções de alta qualidade em um tempo computacional razoável.
+
+## 8. Referências
 - [1] Beltrán, J. D., Calderón, J. E., Cabrera, R. J., Pérez, J. A. M., & Moreno-Vega, J. M. (2004). **GRASP-VNS hybrid for the Strip Packing Problem**. In Proceedings of the 4th Metaheuristics International Conference (pp. 417-421).
