@@ -1,4 +1,4 @@
-# II Desafio de Otimização com Metaheurísticas
+# II Desafio em Otimização com Metaheurística
 - **Nome da equipe:** The Otimization Hunter:  Metaheuristics
 - **Equipe:** Enzo Moura de Rezende e Pedro Paulo Gomes do Carmo
 
